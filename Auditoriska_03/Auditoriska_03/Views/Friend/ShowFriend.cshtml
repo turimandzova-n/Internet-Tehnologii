@@ -1,0 +1,45 @@
+﻿@model List<Auditoriska_03.Models.FriendModel>
+@{
+    ViewBag.Title = "ShowFriend";
+}
+
+<h2>ShowFriend</h2>
+
+<table style="border: 1px solid">
+    <tr style="border: 1px solid">
+        <td style="border: 1px solid">
+            Friend ID
+        </td>
+        <td style="border: 1px solid">
+            Friend Name
+        </td>
+        <td style="border: 1px solid">
+            Place
+        </td>
+        <td style="border: 1px solid"></td>
+    </tr>
+    
+        @{
+            int i = 0;
+            foreach (var friend in Model)
+            {
+            <tr style="border: 1px solid">
+                <td style="border: 1px solid"> @friend.Id</td>
+                <td style="border: 1px solid"> @friend.Ime</td>
+                <td style="border: 1px solid"> @friend.MestoZiveenje</td>
+                <td style="border: 1px solid">
+                    @Html.ActionLink("Edit", "Edit", new { id = i })
+                    @Html.ActionLink("Delete", "Delete", new { id = i })
+                </td>
+            </tr>
+
+                    i++;
+                }
+            }
+
+
+</table>
+
+
+
+

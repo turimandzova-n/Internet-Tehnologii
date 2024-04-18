@@ -1,0 +1,16 @@
+﻿@model Auditoriska_8.Models.ClientMovie
+
+
+<h2>InsertNewClient</h2>
+
+@using (Html.BeginForm("InsertClientMovie", "Movies"))
+            {
+                <div class="form-group">
+                    @Html.DropDownListFor(m => m.CliendId, new SelectList(Model.clients, "Id", "Name"), 
+                   new { @class = "form-group" })
+                    @Html.HiddenFor(m=>m.MovieId)
+
+                </div>
+                <button type="submit">Add client to movie!</button>
+            }
+

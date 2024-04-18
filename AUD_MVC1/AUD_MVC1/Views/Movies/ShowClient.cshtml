@@ -1,0 +1,16 @@
+﻿@model AUD_MVC1.Models.Client
+@{
+    ViewBag.Title = "ShowClient";
+}
+
+@if (Model.Age < 18)
+{
+    <h3 style="color: red">Потребен е надзор од родител или старател</h3>
+}
+else
+{
+<h2>@Model.Name - @Model.MovieCard </h2>
+<h5>Phone: @Model.Phone</h5>
+<h5>Address: @Model.Address</h5>
+}
+

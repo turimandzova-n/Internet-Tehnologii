@@ -1,0 +1,23 @@
+﻿@model Auditoriska_03.Models.FriendModel
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+@using (Html.BeginForm("Edit", "Friend"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Ime)
+        @Html.TextBoxFor(m => m.Ime, new { @class = "form-controll" })
+        @Html.ValidationMessageFor(m => m.Ime)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.MestoZiveenje);
+        @Html.TextBoxFor(m => m.MestoZiveenje, new { @class = "form-controll" })
+        @Html.ValidationMessageFor(m => m.MestoZiveenje)
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Edit</button>
+
+}
+
